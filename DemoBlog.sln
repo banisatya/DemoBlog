@@ -12,13 +12,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBlog.DataAccess", "Demo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBlog.Service", "DemoBlog.Service\DemoBlog.Service.csproj", "{4AAAA5F6-1CD7-49DB-9659-854C6F9ACC5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBlog.ConsoleApplication", "DemoBlog.ConsoleApplication\DemoBlog.ConsoleApplication.csproj", "{03AE1239-3019-428F-801F-F04180E2A0CB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2030435A-E5B2-4ADC-A23F-2F057D136D4B}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\bani\Desktop\InHealth\Readme.txt = C:\Users\bani\Desktop\InHealth\Readme.txt
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,10 +30,6 @@ Global
 		{4AAAA5F6-1CD7-49DB-9659-854C6F9ACC5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AAAA5F6-1CD7-49DB-9659-854C6F9ACC5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AAAA5F6-1CD7-49DB-9659-854C6F9ACC5C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{03AE1239-3019-428F-801F-F04180E2A0CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{03AE1239-3019-428F-801F-F04180E2A0CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{03AE1239-3019-428F-801F-F04180E2A0CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{03AE1239-3019-428F-801F-F04180E2A0CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<DemoBlog.DataAccess.ViewModel.BlogList>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <h4>@item.Subject</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <span class="post-meta">Posted by @item.CreatedByName on @item.CreatedOnStr</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            @item.BlogText
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            @Html.ActionLink("Read More...", "View", "Blog", new { id = item.BlogID }, null)
+        </div>
+    </div>
+    <br />
+}

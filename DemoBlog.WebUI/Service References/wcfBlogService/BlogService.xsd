@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50105/BlogService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.EntityModel" />
+  <xs:import schemaLocation="http://localhost:50105/BlogService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.ViewModel" />
+  <xs:element name="CreateBlog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.EntityModel" minOccurs="0" name="model" nillable="true" type="q1:Blog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateBlogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.ViewModel" minOccurs="0" name="CreateBlogResult" nillable="true" type="q2:dbActionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsValidSubject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsValidSubjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsValidSubjectResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllBlogs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllBlogsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.ViewModel" minOccurs="0" name="GetAllBlogsResult" nillable="true" type="q3:ArrayOfBlogList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBlog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BlogID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBlogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.ViewModel" minOccurs="0" name="GetBlogResult" nillable="true" type="q4:BlogViewModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBlog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BlogID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBlogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.ViewModel" minOccurs="0" name="DeleteBlogResult" nillable="true" type="q5:dbActionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CommentListAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BlogID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CommentListAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.ViewModel" minOccurs="0" name="CommentListAllResult" nillable="true" type="q6:ArrayOfCommentList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CommentCreate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.ViewModel" minOccurs="0" name="model" nillable="true" type="q7:CommentViewModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CommentCreateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.ViewModel" minOccurs="0" name="CommentCreateResult" nillable="true" type="q8:dbActionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

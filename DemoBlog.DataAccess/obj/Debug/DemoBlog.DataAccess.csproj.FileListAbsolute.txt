@@ -1,0 +1,10 @@
+E:\VS Projects2013\DemoBlog\DemoBlog.DataAccess\bin\DemoBlog.DataAccess.dll.config
+E:\VS Projects2013\DemoBlog\DemoBlog.DataAccess\bin\DemoBlog.DataAccess.dll
+E:\VS Projects2013\DemoBlog\DemoBlog.DataAccess\bin\DemoBlog.DataAccess.pdb
+E:\VS Projects2013\DemoBlog\DemoBlog.DataAccess\bin\EntityFramework.dll
+E:\VS Projects2013\DemoBlog\DemoBlog.DataAccess\bin\EntityFramework.SqlServer.dll
+E:\VS Projects2013\DemoBlog\DemoBlog.DataAccess\bin\EntityFramework.xml
+E:\VS Projects2013\DemoBlog\DemoBlog.DataAccess\bin\EntityFramework.SqlServer.xml
+E:\VS Projects2013\DemoBlog\DemoBlog.DataAccess\obj\Debug\DemoBlog.DataAccess.csprojResolveAssemblyReference.cache
+E:\VS Projects2013\DemoBlog\DemoBlog.DataAccess\obj\Debug\DemoBlog.DataAccess.dll
+E:\VS Projects2013\DemoBlog\DemoBlog.DataAccess\obj\Debug\DemoBlog.DataAccess.pdb

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.ViewModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.ViewModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="RegisterViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConfirmPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterViewModel" nillable="true" type="tns:RegisterViewModel" />
+  <xs:complexType name="dbActionResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RecordID" type="xs:int" />
+      <xs:element minOccurs="0" name="SuccessMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dbActionResult" nillable="true" type="tns:dbActionResult" />
+  <xs:complexType name="LoginViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoginViewModel" nillable="true" type="tns:LoginViewModel" />
+  <xs:complexType name="UserValidationViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsAdminUser" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsValidUser" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserValidationViewModel" nillable="true" type="tns:UserValidationViewModel" />
+  <xs:complexType name="ArrayOfUserList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserList" nillable="true" type="tns:UserList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserList" nillable="true" type="tns:ArrayOfUserList" />
+  <xs:complexType name="UserList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedOnStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMakeAdmin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserTypeID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserList" nillable="true" type="tns:UserList" />
+</xs:schema>

@@ -1,0 +1,50 @@
+﻿@model List<DemoBlog.DataAccess.ViewModel.UserList>
+
+
+<div class=" row">
+    <div class="col-md-3">
+        <h3>User Name</h3>
+    </div>
+    <div class="col-md-3">
+        <h3>User Type</h3>
+    </div>
+    <div class="col-md-3">
+        <h3>Created On</h3>
+    </div>
+    <div class="col-md-3">
+        <h3>Action</h3>
+    </div>
+</div>
+@for (int i = 0; i < Model.Count(); i++)
+{
+    <div class="row">
+        <div class="col-md-3">
+            <h6>@Model[i].UserName</h6>
+        </div>
+        <div class="col-md-3">
+            <h6>@Model[i].UserType</h6>
+        </div>
+        <div class="col-md-3">
+            <h6>@Model[i].CreatedOnStr</h6>
+        </div>
+        <div class="col-md-3">
+
+            @if (Model[i].UserTypeID == (int)DemoBlog.DataAccess.ViewModel.Utility.UserType.StandardUser)
+            {
+                @Html.ActionLink("DELETE", "DeleteUser", null, new { @href = "javascript:void(0)", onclick = "DeleteUser(" + Model[i].UserID + ")" })
+                <text> | </text>@Html.ActionLink("MAKE ADMIN", "MakeAdminUser", null, new { @href = "javascript:void(0)", onclick = "CreateAdminUser(" + Model[i].UserID + ", '" + Model[i].UserName+ "')" })
+            }
+            else
+            {
+                @Html.Label("N/A", new { @style="color:Blue" })
+            }
+        </div>
+    </div>
+}
+<br />
+<br />
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Back", "Index", "Home")
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿@model DemoBlog.DataAccess.ViewModel.BlogViewModel
+<div class="row">
+    <div class="col-md-12">
+        <h3>@Model.Blog.Subject</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h5>@Model.Blog.BlogText</h5>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Add a Comment", "CommentCreate", "Blog", new { BlogID = Model.Blog.BlogID }, null)
+    </div>
+</div>
+<br />
+@{Html.RenderAction("CommentList", "Blog", new { BlogID = Model.Blog.BlogID });}
+<br />
+<div class="row">
+    @if (Model.IsAdminUser && Request.IsAuthenticated)
+    {
+        <div style="color:red" class="col-md-4">
+            @Html.ActionLink("Delete this Blog", "DeleteBlog", "Blog", new { BlogID = Model.Blog.BlogID }, null)
+        </div>
+    }
+</div>

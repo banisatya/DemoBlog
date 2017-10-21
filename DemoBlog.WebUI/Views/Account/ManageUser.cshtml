@@ -1,0 +1,26 @@
+﻿@model dynamic
+<script type="text/javascript">
+    function DeleteUser(id) {
+        if (confirm('Do you want to delete the user?')) {
+            $.getJSON('@Url.Action("_DeleteUser", "Account")/' + id, function () {
+                var url='@Url.Action("_UserList", "Account")';
+                SetAjaxContent('divUserList', url)
+            });
+        }
+    }
+
+    function CreateAdminUser(id, username) {
+        if (confirm('Do you want to make ' + username + '  as Admin User?')) {
+            $.getJSON('@Url.Action("_CreateAdminUser", "Account")/' + id, function () {
+                var url = '@Url.Action("_UserList", "Account")';
+                SetAjaxContent('divUserList', url)
+            });
+        }
+    }
+
+</script>
+<h3>List of Users</h3>
+<hr />
+<div id="divUserList">
+    @{Html.RenderAction("_UserList");}
+</div>

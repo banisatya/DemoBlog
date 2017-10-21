@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.ViewModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.ViewModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50105/BlogService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.EntityModel" />
+  <xs:complexType name="dbActionResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RecordID" type="xs:int" />
+      <xs:element minOccurs="0" name="SuccessMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dbActionResult" nillable="true" type="tns:dbActionResult" />
+  <xs:complexType name="ArrayOfBlogList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BlogList" nillable="true" type="tns:BlogList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBlogList" nillable="true" type="tns:ArrayOfBlogList" />
+  <xs:complexType name="BlogList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlogID" type="xs:int" />
+      <xs:element minOccurs="0" name="BlogText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BlogList" nillable="true" type="tns:BlogList" />
+  <xs:complexType name="BlogViewModel">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.EntityModel" minOccurs="0" name="Blog" nillable="true" type="q1:Blog" />
+      <xs:element minOccurs="0" name="IsAdminUser" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserTypeID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BlogViewModel" nillable="true" type="tns:BlogViewModel" />
+  <xs:complexType name="ArrayOfCommentList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommentList" nillable="true" type="tns:CommentList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommentList" nillable="true" type="tns:ArrayOfCommentList" />
+  <xs:complexType name="CommentList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommentID" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommentList" nillable="true" type="tns:CommentList" />
+  <xs:complexType name="CommentViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlogID" type="xs:int" />
+      <xs:element minOccurs="0" name="CommentText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommentViewModel" nillable="true" type="tns:CommentViewModel" />
+</xs:schema>

@@ -1,0 +1,10 @@
+E:\VS Projects2013\DemoBlog\DemoBlog.Service\obj\Debug\DemoBlog.Service.csprojResolveAssemblyReference.cache
+E:\VS Projects2013\DemoBlog\DemoBlog.Service\bin\DemoBlog.Service.dll.config
+E:\VS Projects2013\DemoBlog\DemoBlog.Service\bin\DemoBlog.Service.dll
+E:\VS Projects2013\DemoBlog\DemoBlog.Service\bin\DemoBlog.Service.pdb
+E:\VS Projects2013\DemoBlog\DemoBlog.Service\bin\DemoBlog.DataAccess.dll
+E:\VS Projects2013\DemoBlog\DemoBlog.Service\bin\EntityFramework.dll
+E:\VS Projects2013\DemoBlog\DemoBlog.Service\bin\DemoBlog.DataAccess.pdb
+E:\VS Projects2013\DemoBlog\DemoBlog.Service\bin\EntityFramework.xml
+E:\VS Projects2013\DemoBlog\DemoBlog.Service\obj\Debug\DemoBlog.Service.dll
+E:\VS Projects2013\DemoBlog\DemoBlog.Service\obj\Debug\DemoBlog.Service.pdb

@@ -1,0 +1,12 @@
+E:\VS Projects2013\DemoBlog\DemoBlog.ConsoleApplication\bin\Debug\DemoBlog.ConsoleApplication.exe.config
+E:\VS Projects2013\DemoBlog\DemoBlog.ConsoleApplication\obj\Debug\DemoBlog.ConsoleApplication.csprojResolveAssemblyReference.cache
+E:\VS Projects2013\DemoBlog\DemoBlog.ConsoleApplication\bin\Debug\DemoBlog.ConsoleApplication.exe
+E:\VS Projects2013\DemoBlog\DemoBlog.ConsoleApplication\bin\Debug\DemoBlog.ConsoleApplication.pdb
+E:\VS Projects2013\DemoBlog\DemoBlog.ConsoleApplication\bin\Debug\DemoBlog.DataAccess.dll
+E:\VS Projects2013\DemoBlog\DemoBlog.ConsoleApplication\bin\Debug\EntityFramework.dll
+E:\VS Projects2013\DemoBlog\DemoBlog.ConsoleApplication\bin\Debug\DemoBlog.DataAccess.pdb
+E:\VS Projects2013\DemoBlog\DemoBlog.ConsoleApplication\bin\Debug\EntityFramework.xml
+E:\VS Projects2013\DemoBlog\DemoBlog.ConsoleApplication\obj\Debug\DemoBlog.ConsoleApplication.exe
+E:\VS Projects2013\DemoBlog\DemoBlog.ConsoleApplication\obj\Debug\DemoBlog.ConsoleApplication.pdb
+E:\VS Projects2013\DemoBlog\DemoBlog.ConsoleApplication\bin\Debug\EntityFramework.SqlServer.dll
+E:\VS Projects2013\DemoBlog\DemoBlog.ConsoleApplication\bin\Debug\EntityFramework.SqlServer.xml

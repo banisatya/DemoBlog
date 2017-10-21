@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BlogService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50105/BlogService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50105/BlogService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50105/BlogService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.EntityModel" />
+      <xsd:import schemaLocation="http://localhost:50105/BlogService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DemoBlog.DataAccess.ViewModel" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBlogService_CreateBlog_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBlog" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_CreateBlog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBlogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_IsValidSubject_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsValidSubject" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_IsValidSubject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsValidSubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_GetAllBlogs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBlogs" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_GetAllBlogs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBlogsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_GetBlog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlog" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_GetBlog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_DeleteBlog_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBlog" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_DeleteBlog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBlogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_CommentListAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:CommentListAll" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_CommentListAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CommentListAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_CommentCreate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CommentCreate" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_CommentCreate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CommentCreateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBlogService">
+    <wsdl:operation name="CreateBlog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogService/CreateBlog" message="tns:IBlogService_CreateBlog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogService/CreateBlogResponse" message="tns:IBlogService_CreateBlog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValidSubject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogService/IsValidSubject" message="tns:IBlogService_IsValidSubject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogService/IsValidSubjectResponse" message="tns:IBlogService_IsValidSubject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBlogs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogService/GetAllBlogs" message="tns:IBlogService_GetAllBlogs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogService/GetAllBlogsResponse" message="tns:IBlogService_GetAllBlogs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogService/GetBlog" message="tns:IBlogService_GetBlog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogService/GetBlogResponse" message="tns:IBlogService_GetBlog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogService/DeleteBlog" message="tns:IBlogService_DeleteBlog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogService/DeleteBlogResponse" message="tns:IBlogService_DeleteBlog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CommentListAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogService/CommentListAll" message="tns:IBlogService_CommentListAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogService/CommentListAllResponse" message="tns:IBlogService_CommentListAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CommentCreate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogService/CommentCreate" message="tns:IBlogService_CommentCreate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogService/CommentCreateResponse" message="tns:IBlogService_CommentCreate_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBlogService" type="tns:IBlogService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateBlog">
+      <soap:operation soapAction="http://tempuri.org/IBlogService/CreateBlog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidSubject">
+      <soap:operation soapAction="http://tempuri.org/IBlogService/IsValidSubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBlogs">
+      <soap:operation soapAction="http://tempuri.org/IBlogService/GetAllBlogs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <soap:operation soapAction="http://tempuri.org/IBlogService/GetBlog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlog">
+      <soap:operation soapAction="http://tempuri.org/IBlogService/DeleteBlog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommentListAll">
+      <soap:operation soapAction="http://tempuri.org/IBlogService/CommentListAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommentCreate">
+      <soap:operation soapAction="http://tempuri.org/IBlogService/CommentCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BlogService">
+    <wsdl:port name="BasicHttpBinding_IBlogService" binding="tns:BasicHttpBinding_IBlogService">
+      <soap:address location="http://localhost:50105/BlogService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

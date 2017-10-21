@@ -1,10 +1,6 @@
 ﻿@model DemoBlog.DataAccess.ViewModel.RegisterViewModel
-@{
-    ViewBag.Title = "Register";
-}
-
-<h3>@ViewBag.Title</h3>
-<hr />
+<h4>Register</h4>
+<hr style="border-color:black" />
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -33,7 +29,6 @@
         </div>
     </div>
 }
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

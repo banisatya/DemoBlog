@@ -13,8 +13,6 @@ namespace DemoBlog.Service
         DemoContext db = null;
         public UserService()
         {
-            //string connectionString = @"data source=BLUENEPTUNE\SQLEXPRESS2014;initial catalog=BlogDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
-            //db = new DemoContext(connectionString);
             db = new DemoContext();
         }
 
@@ -45,8 +43,6 @@ namespace DemoBlog.Service
         {
             var model = new UserValidationViewModel();
             model.IsValidUser = false;
-            //using (var db = new DemoContext(connectionString))
-            //{
             try
             {
                 var User = db.BlogUser.SingleOrDefault(x => x.UserName == UserModel.UserName && x.Password == UserModel.Password);
@@ -61,13 +57,13 @@ namespace DemoBlog.Service
             catch (Exception ex)
             {
             }
-            //}
             return model;
         }
 
         public List<UserList> UserListSelectAll()
         {
             var lst = (from u in db.BlogUser
+                       orderby u.CreatedOn descending
                        select new UserList
                        {
                            UserID = u.UserID,
@@ -81,7 +77,7 @@ namespace DemoBlog.Service
                         CreatedOn = x.CreatedOn,
                         UserTypeID = x.UserTypeID,
                         UserType = x.UserTypeID == Utility.UserType.AdminUser ? "Admin" : "Standard",
-                        CreatedOnStr = x.CreatedOn != null ? x.CreatedOn.Value.ToShortDateString() : String.Empty
+                        CreatedOnStr = x.CreatedOn != null ? x.CreatedOn.Value.ToString("MMMM dd, yyyy") : String.Empty
                     }).ToList();
             return lst;
         }

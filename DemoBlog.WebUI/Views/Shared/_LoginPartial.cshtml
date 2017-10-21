@@ -5,15 +5,6 @@
     {
         @Html.AntiForgeryToken()
         <ul class="nav navbar-nav navbar-right">
-            @if (Session["IsAdminUser"] != null && Convert.ToBoolean(Session["IsAdminUser"].ToString()) == true)
-            {
-                <li>
-                    @Html.ActionLink("Manage User", "ManageUser", "Account")
-                </li>
-            }
-            <li>
-                @Html.ActionLink("Add Blog", "Create", "Blog")
-            </li>
             <li>
                 @Html.ActionLink("Hello " + User.Identity.GetUserName(), "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
@@ -23,7 +14,6 @@
 }
 else
 {
-    
     <ul class="nav navbar-nav navbar-right">
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", null, new { id = "loginLink" })</li>

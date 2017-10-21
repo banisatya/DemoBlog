@@ -3,27 +3,27 @@
     ViewBag.Title = "Home Page";
 }
 
-@foreach (var item in Model)
-{
-    <div class="row">
-        <div class="col-md-12">
-            <h4>@item.Subject</h4>
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <h4>@item.Subject</h4>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <span class="post-meta">Posted by @item.CreatedByName on @item.CreatedOnStr</span>
+        <div class="row">
+            <div class="post-preview col-md-12">
+                <span class="post-meta">Posted by @item.CreatedByName on @item.CreatedOnStr</span>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            @item.BlogText
+        <div class="row">
+            <div class="col-md-12">
+                @item.BlogText
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            @Html.ActionLink("Read More...", "View", "Blog", new { id = item.BlogID }, null)
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ActionLink("Read More...", "View", "Blog", new { id = item.BlogID }, new { @style = "color: #0000ff" })
+            </div>
         </div>
-    </div>
-    <br />
-}
+        <br />
+    }

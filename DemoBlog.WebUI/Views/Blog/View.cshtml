@@ -6,13 +6,13 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <h5>@Model.Blog.BlogText</h5>
+        <p>@Model.Blog.BlogText</p>
     </div>
 </div>
 <br />
 <div class="row">
     <div class="col-md-4">
-        @Html.ActionLink("Add a Comment", "CommentCreate", "Blog", new { BlogID = Model.Blog.BlogID }, null)
+        @Html.ActionLink("Add a Comment", "CommentCreate", "Blog", new { BlogID = Model.Blog.BlogID }, new { @style = "color: #0000ff" })
     </div>
 </div>
 <br />

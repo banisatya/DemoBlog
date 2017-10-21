@@ -1,3 +1,11 @@
+Environment
+######################################################################
+The project is created in below environment so if you use upper version then
+you may need to upgrade the project
+
+1. Visual Studio Professional 2013
+2. SQL Server 2014
+
 Create the Database
 ######################################################################
 Create a database named "BlogDB"

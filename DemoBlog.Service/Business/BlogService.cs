@@ -13,26 +13,21 @@ namespace DemoBlog.Service
         DemoContext db;
         public BlogService()
         {
-            string connectionString = @"data source=BLUENEPTUNE\SQLEXPRESS2014;initial catalog=BlogDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
-            //db = new DemoContext(connectionString);
             db = new DemoContext();
         }
 
         #region Blog
-        
+
         public dbActionResult CreateBlog(Blog model)
         {
             dbActionResult dbResult = new dbActionResult();
             dbResult.IsSuccess = false;
             try
             {
-                //using (DemoContext db = new DemoContext(connectionString))
-                //{
                 model.CreatedOn = DateTime.Now;
                 db.Blog.Add(model);
                 db.SaveChanges();
                 dbResult.IsSuccess = true;
-                //}
             }
             catch (Exception ex)
             {
@@ -43,10 +38,7 @@ namespace DemoBlog.Service
         public bool IsValidSubject(string Subject)
         {
             bool IsValid = false;
-            //using (DemoContext db = new DemoContext(connectionString))
-            //{
             IsValid = db.Blog.Count(x => x.Subject == Subject) == 0;
-            //}
             return IsValid;
         }
 
@@ -71,7 +63,7 @@ namespace DemoBlog.Service
                                CreatedByName = m.CreatedByName,
                                CreatedOn = m.CreatedOn,
                                BlogText = m.BlogText.Substring(0, 400),
-                               CreatedOnStr=m.CreatedOn.Value.ToString("MMMM dd, yyyy")
+                               CreatedOnStr = m.CreatedOn.Value.ToString("MMMM dd, yyyy")
                            }).ToList();
             return lst;
         }
@@ -79,14 +71,14 @@ namespace DemoBlog.Service
         public BlogViewModel GetBlog(int BlogID)
         {
             var model = (from b in db.Blog
-                       join u in db.BlogUser on b.UserID equals u.UserID into cu
-                       from u in cu.DefaultIfEmpty()
+                         join u in db.BlogUser on b.UserID equals u.UserID into cu
+                         from u in cu.DefaultIfEmpty()
                          where b.BlogID == BlogID
-                       select new BlogViewModel
-                       {
-                           Blog = b,
-                           UserTypeID = u.UserTypeID
-                       }).AsEnumerable().Select(x => new BlogViewModel
+                         select new BlogViewModel
+                         {
+                             Blog = b,
+                             UserTypeID = u.UserTypeID
+                         }).AsEnumerable().Select(x => new BlogViewModel
                     {
                         Blog = x.Blog,
                         IsAdminUser = x.UserTypeID == (int)Utility.UserType.AdminUser

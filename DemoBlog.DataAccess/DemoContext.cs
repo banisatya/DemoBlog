@@ -4,11 +4,6 @@ namespace DemoBlog.DataAccess
 {
     public partial class DemoContext : DbContext
     {
-        //public DemoContext(string connStr)
-        //    : base(connStr)
-        //{
-        //    this.Configuration.LazyLoadingEnabled = false;
-        //}
         public DemoContext()
             : base()
         {

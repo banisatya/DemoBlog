@@ -1,22 +1,21 @@
 ﻿@model DemoBlog.DataAccess.ViewModel.CommentViewModel
- 
-<h4>Add a comment</h4>  
-<hr />  
-@if(Request.IsAuthenticated==false)
-{ 
-<h6>If you are a registered user please login to comment otherwise comment as a guest</h6>
-}    
+<h4>Add Comment</h4>
+<hr style="border-color:black" />
+@if (Request.IsAuthenticated == false)
+{
+    <p>If you are a registered user please login to comment otherwise comment as a guest</p>
+}
 <div class="row">
     <div class="col-md-8">
         <section>
             @using (Html.BeginForm("CommentCreate", "Blog", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
-                @Html.HiddenFor(x=>x.UserID)
+                @Html.HiddenFor(x => x.UserID)
                 @Html.HiddenFor(x => x.BlogID)
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true)
-                if(Model.UserID==0)
-                { 
+                if (Model.UserID == 0)
+                {
                     <div class="form-group">
                         @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
                         <div class="col-md-10">
@@ -28,17 +27,15 @@
                 <div class="form-group">
                     @Html.LabelFor(m => m.CommentText, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
-                        @Html.TextAreaFor(m => m.CommentText, new { rows=5, cols=20, @class = "form-control" })
+                        @Html.TextAreaFor(m => m.CommentText, new { rows = 5, cols = 20, @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.CommentText)
                     </div>
                 </div>
-               
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Add Comment" class="btn btn-default" />
+                        <input type="submit" value="Add" class="btn btn-default" />
                     </div>
                 </div>
-                
             }
         </section>
     </div>

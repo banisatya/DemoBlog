@@ -97,6 +97,7 @@ namespace DemoBlog.WebUI.Controllers
                 if (dbResult.IsSuccess)
                 {
                     Session["UserID"] = dbResult.RecordID;
+                    Session["IsAdminUser"] = dbResult.IsTrueOption1;
                     SetLogin(new LoginViewModel { UserName = model.UserName });
                     return RedirectToAction("Index", "Home");
                 }

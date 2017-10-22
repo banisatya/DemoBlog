@@ -32,6 +32,7 @@ namespace DemoBlog.Service
                 db.SaveChanges();
                 dbResult.IsSuccess = true;
                 dbResult.RecordID = model.UserID;
+                dbResult.IsTrueOption1 = IsFirstUser;
             }
             catch (Exception ex)
             {

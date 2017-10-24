@@ -88,7 +88,7 @@ namespace DemoBlog.WebUI.Controllers
         {
             if (userProxy.IsUserNameExists(model.UserName))
             {
-                ModelState.AddModelError("UserName", "UserName exists already. Please try with another one");
+                ModelState.AddModelError("UserName", "User Name exists already. Please try with another one");
             }
             if (ModelState.IsValid)
             {

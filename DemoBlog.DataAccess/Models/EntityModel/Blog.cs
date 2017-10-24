@@ -15,7 +15,7 @@ namespace DemoBlog.DataAccess.EntityModel
 
         [DisplayName("Subject")]
         [Required]
-        [StringLength(50)]
+        [StringLength(50, ErrorMessage = "The {0} must be maximum 50 characters long.")]
         public string Subject { get; set; }
 
         [DisplayName("Blog")]

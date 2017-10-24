@@ -4,6 +4,7 @@ using DemoBlog.DataAccess.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 
 namespace DemoBlog.Service
@@ -34,6 +35,19 @@ namespace DemoBlog.Service
                 dbResult.RecordID = model.UserID;
                 dbResult.IsTrueOption1 = IsFirstUser;
             }
+            catch (DbEntityValidationException ex)
+            {
+                List<string> errorMessages = new List<string>();
+                foreach (DbEntityValidationResult validationResult in ex.EntityValidationErrors)
+                {
+                    string entityName = validationResult.Entry.Entity.GetType().Name;
+                    foreach (DbValidationError error in validationResult.ValidationErrors)
+                    {
+                        errorMessages.Add(entityName + "." + error.PropertyName + ": " + error.ErrorMessage);
+                    }
+                }
+            }
+
             catch (Exception ex)
             {
             }

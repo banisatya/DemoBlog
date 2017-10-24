@@ -18,6 +18,7 @@ namespace DemoBlog.DataAccess.ViewModel
         public int BlogID { get; set; }
 
         [DisplayName("Name")]
+        [StringLength(10, ErrorMessage = "The {0} must be maximum 10 characters long.")]
         public string UserName { get; set; }
 
         [DisplayName("Comment")]

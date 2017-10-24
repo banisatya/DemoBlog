@@ -6,6 +6,7 @@ namespace DemoBlog.DataAccess.ViewModel
     {
         [Required]
         [Display(Name = "User Name")]
+        [StringLength(10, ErrorMessage = "The {0} must be maximum 10 characters long.")]
         public string UserName { get; set; }
 
         [Required]
